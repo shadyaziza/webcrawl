@@ -1,6 +1,6 @@
 const { getUrlsFromHTML, crawlPage } = require('./crawl');
-
 const process = require('node:process');
+const { printReport } = require('./report');
 
 function main() {
   // Check if there is exactly one command line argument
@@ -14,7 +14,7 @@ function main() {
   console.log('Command line argument:', argument);
 
   console.log('----');
-  console.log(crawlPage(argument, argument));
+  console.log(printReport(crawlPage(argument, argument)));
   console.log('----');
   // The rest of your application logic goes here
 }

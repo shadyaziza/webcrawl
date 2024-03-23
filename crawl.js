@@ -11,7 +11,7 @@ function normalizeURL(input) {
     path = path.slice(0, -1);
   }
   const ans = url.hostname + path;
-  console.log(ans);
+  //   console.log(ans);
   return ans;
 }
 
@@ -24,7 +24,7 @@ function getUrlsFromHTML(htmlBody, baseURL) {
   const hrefs = Array.from(links).map((link) =>
     new URL(link.href, baseURL).toString()
   );
-  console.log(hrefs);
+  //   console.log(hrefs);
   return hrefs;
 }
 
@@ -45,7 +45,7 @@ async function crawlPage(baseURL, currentURL, pages = {}) {
   }
 
   try {
-    console.log('Crawling:', currentURL);
+    // console.log('Crawling:', currentURL);
     const response = await fetch(currentURL);
 
     // Check for HTTP error status codes (400+)
@@ -65,7 +65,7 @@ async function crawlPage(baseURL, currentURL, pages = {}) {
 
     // Read the response body as text
     const htmlBody = await response.text();
-    console.log('HTML Body:', htmlBody);
+    // console.log('HTML Body:', htmlBody);
     const urls = getUrlsFromHTML(htmlBody, currentURL);
 
     // Recursively crawl each URL found on the page
