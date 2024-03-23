@@ -13,7 +13,9 @@ function main() {
   const argument = process.argv[2];
   console.log('Command line argument:', argument);
 
-  crawlPage(argument);
+  console.log('----');
+  console.log(crawlPage(argument, argument));
+  console.log('----');
   // The rest of your application logic goes here
 }
 
